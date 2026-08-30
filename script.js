@@ -1,0 +1,3 @@
+const menuToggle=document.querySelector(".menu-toggle");const nav=document.querySelector("#mainNav");if(menuToggle&&nav){menuToggle.addEventListener("click",()=>nav.classList.toggle("open"));nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>nav.classList.remove("open")));}
+
+const filters=document.querySelectorAll(".filter");const projects=document.querySelectorAll(".project-card");if(filters.length){filters.forEach(btn=>btn.addEventListener("click",()=>{filters.forEach(b=>b.classList.remove("active"));btn.classList.add("active");const filter=btn.dataset.filter;projects.forEach(card=>{card.style.display=(filter==="all"||card.dataset.category===filter)?"block":"none";});}));}
